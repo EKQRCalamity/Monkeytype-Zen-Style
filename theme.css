@@ -1,0 +1,49 @@
+/*This adds the backgrounds image from a URL*/
+body {
+    background-color: #29335C;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/*Centers the menu at the top*/
+#top {
+    grid-template-columns: 1fr auto 1fr;
+}
+/*Hides the logo when typing*/
+#top.focus .logo { 
+    opacity: 0;
+}
+/*Allows custom logo text*/
+h1.text {
+    opacity: 0;
+    visibility: hidden;
+}
+#bottom {
+    visibility: hidden;
+}
+
+div.time {
+    opacity: 0 !important;
+}
+
+div.word.active > letter:nth-child(1),
+div.word.active > letter.correct + letter:not(.correct),
+div.word.active > letter.correct + letter:not(.incorrect),
+div.word.active > letter.incorrect + letter:not(.correct),
+div.word.active > letter.incorrect + letter:not(.incorrect)
+{
+    color: #F18805;
+}
+
+div.word:not(.active) > letter.correct {
+    opacity: 0;
+}
+
+div.word.active > letter.correct:has(+ letter:not(.correct)),
+div.word.active > letter.correct:has(+ letter:not(.incorrect))
+{
+    color: #35CE8D !important;
+}
+
+letter.incorrect {
+    color: #DB2B39 !important;
+}
